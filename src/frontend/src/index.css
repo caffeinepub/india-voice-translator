@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --primary: 0.54 0.092 191;
+    --primary-foreground: 1 0 0;
+    --accent: 0.72 0.17 55;
+    --accent-foreground: 1 0 0;
+    --background: 0.97 0.012 195;
+    --foreground: 0.18 0.02 240;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 240;
+    --secondary: 0.94 0.025 195;
+    --secondary-foreground: 0.35 0.05 195;
+    --muted: 0.94 0.015 195;
+    --muted-foreground: 0.52 0.03 195;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.025 195;
+    --input: 0.88 0.025 195;
+    --ring: 0.54 0.092 191;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.97 0.012 195;
+    --sidebar-foreground: 0.18 0.02 240;
+    --sidebar-primary: 0.54 0.092 191;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.94 0.025 195;
+    --sidebar-accent-foreground: 0.35 0.05 195;
+    --sidebar-border: 0.88 0.025 195;
+    --sidebar-ring: 0.54 0.092 191;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.42 0.09 193) 0%,
+      oklch(0.54 0.092 191) 60%,
+      oklch(0.58 0.09 185) 100%
+    );
+  }
+
+  .btn-orange {
+    background-color: oklch(0.72 0.17 55);
+    color: white;
+  }
+
+  .btn-orange:hover {
+    background-color: oklch(0.66 0.17 55);
+  }
+
+  .footer-bg {
+    background-color: oklch(0.22 0.05 240);
+  }
+
+  .pulse-mic {
+    animation: pulse-mic 1.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-mic {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 oklch(0.72 0.17 55 / 0.6);
+    }
+    50% {
+      box-shadow: 0 0 0 10px oklch(0.72 0.17 55 / 0);
+    }
+  }
+}
